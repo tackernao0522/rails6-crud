@@ -38,3 +38,111 @@ end
 + `Gemfile`の最下段に `gem 'net-smtp' を追加<br>
 
 + `$ bundle install`を実行<br>
+
+## 02. クエリパラメータ
+
++ `app/controllers/start_controller.rb`を編集<br>
+
+```rb:start_controller.rb
+class StartController < ApplicationController
+
+  def index()
+    @title = "Hello Rails!:"
+    @msg = params["msg"]
+    render plain: @title + @msg
+  end
+end
+```
+
++ `config/routes.rb`を編集<br>
+
+```rb:routes.rb
+Rails.application.routes.draw do
+  get 'start/index' => 'start#index'
+end
+```
+
++ localhost:3000/start/index?msg=123 にアクセスしてみる<br>
+
+## View と ERB テンプレート
+
++ `$ touch app/views/start/index.html.erb`を実行<br>
+
++ `app/views/start/index.html.erb`を編集<br>
+
+```html:index.html.erb
+<html>
+
+<head>
+  <title>studyRails</title>
+</head>
+<h1><%= @title %></h1>
+<p><%= @msg %></p>
+
+</html>
+```
+
++ `app/controllers/start_controller.rb`を編集<br>
+
+```rb:start_controller.rb
+class StartController < ApplicationController
+
+  def index()
+    @title = "Hello Rails!:"
+    @msg = params["msg"]
+  end
+end
+```
+
++ http://localhost:3000/start/index?msg=123 にアクセスしてみる<br>
+
+## フォームパラメータ
+
++ `app/views/start/index.html.erb`を編集<br>
+
+```html:index.html.erb
+<html>
+
+<head>
+  <title>studyRails</title>
+</head>
+<h1><%= @title %></h1>
+<p><%= @msg %></p>
+<!-- 追加 -->
+<%= form_tag("index", method: "post") do %>
+<%= label_tag(:input, "Input:") %>
+<%= text_field_tag(:input) %>
+<%= submit_tag("input") %>
+<% end %>
+<!-- ここまで -->
+
+</html>
+```
+
++ `app/controllers/start_controller.rb`を編集<br>
+
+```rb:start_controller.rb
+class StartController < ApplicationController
+
+  def index()
+    if request.post?
+      @title = "Hello Rails!:"
+      @msg = params[:input]
+    else
+      @title = "Hello Rails!:"
+      @msg = "Not POST"
+    end
+  end
+end
+```
+
++ `config/routes.rb`を編集<br>
+
+```rb:routes.rb
+Rails.application.routes.draw do
+  get 'start/index' => 'start#index'
+  post 'start/index' => 'start#index'
+end
+```
+
++ http://localhost:3000/start/index にアクセスして inputを試してみる<br>

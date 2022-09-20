@@ -1,0 +1,14 @@
+<html>
+
+<head>
+  <title>studyRails</title>
+</head>
+<h1><%= @title %></h1>
+<p><%= @msg %></p>
+<%= form_tag("index", method: "post") do %>
+<%= label_tag(:input, "Input:") %>
+<%= text_field_tag(:input) %>
+<%= submit_tag("input") %>
+<% end %>
+
+</html>
