@@ -1,4 +1,6 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
+                          msgboard_index GET    /msgboard/index(.:format)                                                                         msgboard#index
+                                         POST   /msgboard/index(.:format)                                                                         msgboard#index
                              start_index GET    /start/index(.:format)                                                                            start#index
                                          POST   /start/index(.:format)                                                                            start#index
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
