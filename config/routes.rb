@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get 'hello' => 'start#hello'
+  get 'start/index' => 'start#index'
+  post 'start/index' => 'start#index'
 end

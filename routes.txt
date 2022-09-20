@@ -1,5 +1,6 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
-                                   hello GET    /hello(.:format)                                                                                  start#hello
+                             start_index GET    /start/index(.:format)                                                                            start#index
+                                         POST   /start/index(.:format)                                                                            start#index
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
            rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create
