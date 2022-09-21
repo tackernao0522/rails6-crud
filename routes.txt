@@ -1,4 +1,5 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
+                            people_index GET    /people/index(.:format)                                                                           people#index
                           msgboard_index GET    /msgboard/index(.:format)                                                                         msgboard#index
                                          POST   /msgboard/index(.:format)                                                                         msgboard#index
                              start_index GET    /start/index(.:format)                                                                            start#index

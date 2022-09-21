@@ -1,0 +1,14 @@
+<h1 class="display-4 text-primary">People#index</h1>
+<p><%= @msg %></p>
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+  <% @data.each do |obj| %>
+  <tr>
+    <td><%= obj.id %></td>
+    <td><%= obj.name %></td>
+  </tr>
+  <% end %>
+</table>
