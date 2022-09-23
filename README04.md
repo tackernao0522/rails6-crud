@@ -293,7 +293,7 @@ end
 ### `where`で使える条件式とコード例
 
 |検索条件|コード例|
-|:---:|:---:|
+|:---:|:---|
 |文字列のみ|Person.where("name = Jiro"), <br> Person.where("id <= #{params[:id]}")|
 |プレースホルダーを使用した条件|Person.where("name = ?", params[:find]), <br> Person.where("name = ? AND id = ?", params[:find], params[:id]), <br> Person.where("name = :name AND id = :id", {name: params[:find], id: params[:id]})|
 |ハッシュを使用した条件|Person.where(name: params[:find])|
