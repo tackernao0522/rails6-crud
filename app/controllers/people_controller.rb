@@ -44,6 +44,14 @@ class PeopleController < ApplicationController
     redirect_to '/people/index'
   end
 
+  def find
+    @msg = 'please type search word...'
+    @people = Array.new
+    if request.post? then
+      @people = Person.where(name: params[:find])
+    end
+  end
+
   private
 
   def person_params
