@@ -8,6 +8,8 @@
                                          DELETE /people/delete/:id(.:format)                                                                      people#delete
                           msgboard_index GET    /msgboard/index(.:format)                                                                         msgboard#index
                                          POST   /msgboard/index(.:format)                                                                         msgboard#index
+                             people_find GET    /people/find(.:format)                                                                            people#find
+                                         POST   /people/find(.:format)                                                                            people#find
                              start_index GET    /start/index(.:format)                                                                            start#index
                                          POST   /start/index(.:format)                                                                            start#index
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create

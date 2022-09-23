@@ -1,0 +1,22 @@
+<h1 class="display-4 text-primary"><a href="/people/index" style="text-decoration: none;">People#Find</a></h1>
+<p><%= @msg %></p>
+<%= form_with model: @person do |form| %>
+<div class="form-group">
+  <label for="find">Find</label>
+  <%= form.text_field("find", {class: "form-control"}) %>
+</div>
+<%= form.submit("Click", {class: "btn btn-primary"}) %>
+<% end %>
+
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <% @people.each do |obj| %>
+  <td><%= obj.id %></td>
+  <td><%= obj.name %></td>
+  <td><%= obj.age %></td>
+  <% end %>
+</table>
