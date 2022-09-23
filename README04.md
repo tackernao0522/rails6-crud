@@ -333,4 +333,4 @@ end
 
 ### 参考サイト
 
-+ (Active Record クエリインターフェイス - Railsガイド)[https://railsguides.jp/active_record_querying.html] <br>
++ [Active Record クエリインターフェイス - Railsガイド](https://railsguides.jp/active_record_querying.html) <br>
