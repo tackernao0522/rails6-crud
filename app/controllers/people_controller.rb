@@ -13,13 +13,19 @@ class PeopleController < ApplicationController
   def add
     @msg = "add new data."
     @person = Person.new
+    @errors = Hash.new
   end
 
   def create
     if request.post?
-      Person.create(person_params)
+      person = Person.create(person_params)
+      if person.valid?
+        redirect_to '/people/index'
+      else
+        @errorMessages = person.errors
+        render 'add'
+      end
     end
-    redirect_to '/people/index'
   end
 
   def show

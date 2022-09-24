@@ -1,6 +1,11 @@
 <h1 class="display-4 text-primary"><a href="/people/index" style="text-decoration: none">People#add</a></h1>
 <p><%= @msg %></p>
-<%= form_with model: @person, url: people_add_path do |form| %>
+<% if @errorMessages %>
+<% @errorMessages.values.each do |error| %>
+  <p><%= error %></p>
+<% end %>
+<% end%>
+<%= form_with model: Person.new, url: people_add_path do |form| %>
 <div class="form-group">
   <label for="name">Name</label>
   <%= form.text_field :name, class: "form-control" %>
