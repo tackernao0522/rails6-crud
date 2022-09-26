@@ -1,0 +1,18 @@
+<h1 class="display-4 text-primary"><a href="/schools/index" style="text-decoration: none;">Schools#show</h1>
+<p><%= @msg %></p>
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <td><%= @data.id %></td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td><%= @data.name %></td>
+  </tr>
+  <% @data.students.each do |obj| %>
+  <tr>
+    <th>Student</th>
+    <td><a href="/students/<%= obj.id %>"><%= obj.id %></a></td>
+  </tr>
+  <% end %>
+</table>

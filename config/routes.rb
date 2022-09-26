@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'students/index'
+  get 'students/:id', to: 'students#show'
+  get 'schools/index'
+  get 'schools/:id', to: 'schools#show'
   get 'people/index'
   get 'people/add'
   post 'people/add', to: 'people#create'

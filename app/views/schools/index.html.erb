@@ -1,0 +1,14 @@
+<h1 class="display-4 text-primary"><a href="/people/index" style="text-decoration: none;">School#index</h1>
+<p><%= @msg %></p>
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <% @data.each do |obj| %>
+  </tr>
+  <tr>
+    <td><%= obj.id %></td>
+    <td><a href="/schools/<%= obj.id %>" style="text-decoration: none;"><%= obj.name %></a></td>
+  </tr>
+  <% end %>
+</table>
