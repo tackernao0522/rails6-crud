@@ -1,15 +1,19 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
+                          students_index GET    /students/index(.:format)                                                                         students#index
+                           students_show GET    /students/show(.:format)                                                                          students#show
+                           schools_index GET    /schools/index(.:format)                                                                          schools#index
+                            schools_show GET    /schools/show(.:format)                                                                           schools#show
                             people_index GET    /people/index(.:format)                                                                           people#index
                               people_add GET    /people/add(.:format)                                                                             people#add
                                          POST   /people/add(.:format)                                                                             people#create
+                             people_find GET    /people/find(.:format)                                                                            people#find
+                                         POST   /people/find(.:format)                                                                            people#find
                                          GET    /people/:id(.:format)                                                                             people#show
                                          GET    /people/edit/:id(.:format)                                                                        people#edit
                                          PATCH  /people/edit/:id(.:format)                                                                        people#update
                                          DELETE /people/delete/:id(.:format)                                                                      people#delete
                           msgboard_index GET    /msgboard/index(.:format)                                                                         msgboard#index
                                          POST   /msgboard/index(.:format)                                                                         msgboard#index
-                             people_find GET    /people/find(.:format)                                                                            people#find
-                                         POST   /people/find(.:format)                                                                            people#find
                              start_index GET    /start/index(.:format)                                                                            start#index
                                          POST   /start/index(.:format)                                                                            start#index
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
